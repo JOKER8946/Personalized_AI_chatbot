@@ -1,0 +1,68 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+#chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+#chat-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+#chat-container::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+#chat-container::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+/* Animations */
+.user-message { animation: slideInRight 0.3s ease-out; }
+.bot-message { animation: slideInLeft 0.3s ease-out; }
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Loading dots */
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #475569;
+    color: #475569;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+}
+.dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #475569;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #475569;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+@keyframes dotFlashing {
+    0% { background-color: #475569; }
+    50%, 100% { background-color: #cbd5e1; }
+}
