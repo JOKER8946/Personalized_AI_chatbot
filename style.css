@@ -1,19 +1,21 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+
 #chat-container::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 #chat-container::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: transparent;
 }
 #chat-container::-webkit-scrollbar-thumb {
-    background: #94a3b8;
-    border-radius: 4px;
+    background: #e2e8f0;
+    border-radius: 10px;
 }
 #chat-container::-webkit-scrollbar-thumb:hover {
-    background: #64748b;
+    background: #cbd5e1;
 }
+
 /* Animations */
 .user-message { animation: slideInRight 0.3s ease-out; }
 .bot-message { animation: slideInLeft 0.3s ease-out; }
@@ -30,13 +32,14 @@ body {
 /* Loading dots */
 .dot-flashing {
     position: relative;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 5px;
-    background-color: #475569;
-    color: #475569;
+    background-color: #6366f1;
+    color: #6366f1;
     animation: dotFlashing 1s infinite linear alternate;
     animation-delay: .5s;
+    margin-left: 15px;
 }
 .dot-flashing::before, .dot-flashing::after {
     content: '';
@@ -46,23 +49,28 @@ body {
 }
 .dot-flashing::before {
     left: -15px;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 5px;
-    background-color: #475569;
+    background-color: #6366f1;
     animation: dotFlashing 1s infinite alternate;
     animation-delay: 0s;
 }
 .dot-flashing::after {
     left: 15px;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 5px;
-    background-color: #475569;
+    background-color: #6366f1;
     animation: dotFlashing 1s infinite alternate;
     animation-delay: 1s;
 }
 @keyframes dotFlashing {
-    0% { background-color: #475569; }
-    50%, 100% { background-color: #cbd5e1; }
+    0% { background-color: #6366f1; }
+    50%, 100% { background-color: #e0e7ff; }
+}
+
+/* Smooth transitions */
+input, textarea, select, button {
+    transition: all 0.2s ease-in-out;
 }
